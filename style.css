@@ -718,16 +718,23 @@ body.theme-space {
     color: var(--text-secondary);
 }
 
+.project-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.03);
+    margin-top: auto;
+}
+
 .project-details-link {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 8px;
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--neon-orange);
     cursor: pointer;
-    padding-top: 12px;
-    border-top: 1px solid rgba(255,255,255,0.03);
     transition: var(--transition-smooth);
 }
 
@@ -737,6 +744,22 @@ body.theme-space {
 
 .project-details-link.active i {
     transform: rotate(180deg);
+}
+
+.project-live-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--neon-cyan);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.project-live-link:hover {
+    color: var(--text-primary);
+    text-shadow: 0 0 8px var(--neon-cyan-glow);
 }
 
 .project-details-panel {

@@ -375,8 +375,10 @@ const virtualFileSystem = {
         'kindergarten.txt': 'Kindergarten Management System (Apr 2025)\nBuilt with Java Servlets, JDBC, MySQL, Tomcat.',
         'coffee_shop.txt': 'My Online Coffee Shop (Nov 2024)\nBuilt with React, Node.js, Express, MongoDB, GitHub Actions.',
         'kidquest.txt': 'KidQuest Learning Hub (Jan 2026)\nBuilt with Vanilla HTML5/CSS3, Web Audio & Speech APIs.',
+        'motoseek.txt': 'MotoSeek Bike Database (Feb 2026)\nBuilt with HTML5/CSS3, Vanilla JavaScript, REST APIs (Wikipedia & API-Ninjas).',
         'novanav.txt': 'NovaNav Smart Navigation (Apr 2026)\nBuilt with Leaflet.js, Nominatim API, Glassmorphism.',
-        'browserdoom.txt': 'BrowserDoom 3D Game (Feb 2026)\nBuilt with Three.js, WebGL, FileReader API.'
+        'browserdoom.txt': 'BrowserDoom 3D Game (Feb 2026)\nBuilt with Three.js, WebGL, FileReader API.',
+        'zenfocus.txt': 'Zenfocus Focus Tracker (Feb 2026)\nBuilt with React, Vite, LocalStorage.'
     }
 };
 
@@ -577,11 +579,14 @@ filterBtns.forEach(btn => {
 // Expand details
 function toggleDetails(linkElement) {
     linkElement.classList.toggle('active');
-    const panel = linkElement.nextElementSibling;
-    if (panel.style.maxHeight && panel.style.maxHeight !== '0px') {
-        panel.style.maxHeight = '0px';
-    } else {
-        panel.style.maxHeight = panel.scrollHeight + 'px';
+    const card = linkElement.closest('.project-card');
+    const panel = card ? card.querySelector('.project-details-panel') : null;
+    if (panel) {
+        if (panel.style.maxHeight && panel.style.maxHeight !== '0px') {
+            panel.style.maxHeight = '0px';
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
     }
 }
 
